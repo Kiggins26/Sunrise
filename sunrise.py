@@ -33,12 +33,14 @@ sunrise_time = (sun.get_sunrise_time().astimezone().strftime('%H:%M'))
 curr_time = (time.strftime('%H:%M'))
 
 while curr_time != sunrise_time:
+    print("")
     
 for i in range(100):
-    time.sleep(1)
+    time.sleep(.5)
     sbc.set_brightness(i)
 
 while True:
+    time.sleep(.5)
     time_text=time.strftime("%d/%m/%Y %A %H:%M:%S")
     time_lbl.config(text=time_text)
     ws.config(bg = black_to_red[i])
@@ -49,6 +51,7 @@ while True:
     ws.update()
 
 while True:
+    time.sleep(.5)
     time_text=time.strftime("%d/%m/%Y %A %H:%M:%S")
     time_lbl.config(text=time_text)
     ws.config(bg = red_to_orange[i])
@@ -59,6 +62,7 @@ while True:
     ws.update()
 
 while True:
+    time.sleep(.5)
     time_text=time.strftime("%d/%m/%Y %A %H:%M:%S")
     time_lbl.config(text=time_text)
     ws.config(bg = orange_to_blue[i])
